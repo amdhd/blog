@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/articles', [ArticleController::class,'index']);
+Route::get('/articles', [ArticleController::class,'index'])->name('article:index');
+Route::get('/articles/create', [ArticleController::class, 'create'])->name('article:create');
+Route::post('/articles/create', [ArticleController::class, 'store'])->name('article:store');
 
 Auth::routes();
 

@@ -8,21 +8,29 @@
                 <div class="card-header">{{ __('Article Index') }}</div>
 
                 <div class="card-body">
-                <table>
+                <table class="table">
+                    <thead>
+
                 <tr>
                     <th>Title</th>
                     <th>Description</th>
                     <th>Action</th>
                 </tr>
+                </thead>
+                <tbody>
+
 
                 @foreach($articles as $article)
                 <tr>
                 <td>{{$article->title}}</td>
                 <td>{{$article->description}}</td>
+                <td>
+                    <a href="" class="btn btn-primary">Edit</a>
+                    <a href="" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
                 </tr>
                 
                 @endforeach
-                
+                </tbody>
                 </table>
                 </div>
             </div>
