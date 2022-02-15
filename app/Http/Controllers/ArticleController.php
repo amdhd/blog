@@ -17,6 +17,7 @@ class ArticleController extends Controller
         return view('articles.create');
 
     }
+   
 
     public function store(Request $request)
     {
@@ -27,5 +28,21 @@ class ArticleController extends Controller
         $article->save();
 
         return redirect()->route('article:index')->with(['alert-type' => 'alert-success','alert' => 'Your article saved']);
+    }
+
+    public function edit(Article $article)
+    {
+        return view('articles.edit')->with(compact('article'));
+
+    }
+
+    public function update(Article $article,Request $request )
+    {
+        $article->update($request->only('title', 'description'));
+        return redirect()->route('article:index')->with(['alert-type' => 'alert-success','alert' => 'Your article saved']);
+
+
+        
+
     }
 }

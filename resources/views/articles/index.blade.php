@@ -25,7 +25,7 @@
                 <td>{{$article->title}}</td>
                 <td>{{$article->description}}</td>
                 <td>
-                    <a href="" class="btn btn-primary">Edit</a>
+                    <a href="{{route('article:edit', $article)}}" class="btn btn-primary">Edit</a>
                     <a href="" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
                 </tr>
                 
